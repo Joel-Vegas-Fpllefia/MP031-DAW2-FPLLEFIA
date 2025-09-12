@@ -1,0 +1,15 @@
+div{
+    display: flex;
+}
+
+div > img{
+    border-radius: 60%;
+}
+
+div > p{
+    margin-top: 75px;
+}
+
+#info_php{
+    background-color: yellow;
+}
