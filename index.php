@@ -17,7 +17,6 @@ function	info_of_phpinfo(){
 }
 ?>
 
-
 <html>
     <head>
         <title> Joel Vegas Romero </title>

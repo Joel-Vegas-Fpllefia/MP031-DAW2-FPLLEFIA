@@ -12,17 +12,36 @@ function	date_to_day(){
 	echo date("Y:m:H");
 }
 
+function	info_of_phpinfo(){
+	echo "El phpinfo es una función la cual , nos muestra todo la información sobre la posible del lenguaje de programación PHP";
+}
 ?>
-
 
 <html>
     <head>
         <title> Joel Vegas Romero </title>
+		<link rel="stylesheet" href="/src/style.css">
     </head>
     <body>
-        <?php
-            say_hellow("Joel Vegas Romero");
-        ?>
+		<header>
+			<img src="/img/fpllefia_logo.jfif">
+			<h1> Módulo 7 - Práctica 1. Mi primera aplicación en PHP</h1>
+		</header>
+
+		<div>
+			<img src="/img/a.jpg">
+			<p>
+				<?php
+					say_hellow("Joel Vegas Romero");
+				?>
+			</p>
+		</div>
+		<p id="info_php"> 
+			<?php
+				info_of_phpinfo()
+			?>
+		</p>
+        
     </body>
 
     <footer>
@@ -30,7 +49,6 @@ function	date_to_day(){
             <?php
                 footer_good_bye("Albert :) ");
 				date_to_day();
-                
             ?>
         </p>
     </footer>
