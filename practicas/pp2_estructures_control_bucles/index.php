@@ -13,6 +13,14 @@
         [
             "nombre" => "Nombre_aleatori_parell_o_senar",
             "url" => "Exercici_3_:_Nombre_aleatori_parell_o_senar/index.php"
+        ],
+        [
+            "nombre" => "Divisors_d_un_nombre_i_verificacio_de_nombre",
+            "url"   => "Exercici_extra_1_Divisors_d_un_nombre_i_verificacio_de_nombre/index.php"
+        ],
+        [
+            "nombre" => "Exercici_extra_2_L_home_del_temps",
+            "url"   =>  "Exercici_extra_2_L_home_del_temps/index.php"
         ]
     ];
 
