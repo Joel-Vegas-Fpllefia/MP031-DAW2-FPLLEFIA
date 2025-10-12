@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #111;
+  margin: 0;
+  padding: 20px;
+}
+
+.movie-details {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 900px;
+  gap: 25px;
+}
+
+.poster {
+  width: 260px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+.schedule {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  gap: 8px;
+}
+
+.label {
+  background-color: #007b83;
+  color: white;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.hour {
+  background-color: #d52d2d;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.hour:hover {
+  background-color: #b82323;
+}
+
+.trailer-btn {
+  margin-top: 20px;
+  display: inline-block;
+  border: 1px solid #000;
+  padding: 8px 14px;
+  text-decoration: none;
+  color: #000;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+  width: fit-content;
+}
+
+.trailer-btn:hover {
+  background-color: #000;
+  color: white;
+}

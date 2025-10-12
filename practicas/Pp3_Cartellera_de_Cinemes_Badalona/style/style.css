@@ -1,0 +1,88 @@
+* {
+  margin: 0px auto;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: black;
+
+  & div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+      width: 70px;
+      height: 70px;
+      margin-right: 0px;
+    }
+
+    & h1 {
+      margin-left: 0px;
+      color: white;
+    }
+  }
+}
+#Cards{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.card {
+  position: relative;
+  width: 250px;
+  height: 300px;
+  margin: 0px;
+}
+
+.card a {
+  display: block;      
+  /* width: 100%;          
+  height: 100%;         */
+  text-decoration: none;
+  color: inherit;
+  position: absolute;   
+  top: 0;
+  left: 0;
+  z-index: 2;           
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.card h1, .card p {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+  pointer-events: none; 
+}
+
+.card h1 {
+  top: 40%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.card p {
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.card:hover img{
+    display: none;
+}
+.card:hover h1,
+.card:hover p {
+  opacity: 1;
+  display: block;
+  color: black;
+}
