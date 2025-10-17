@@ -11,13 +11,14 @@ echo $usuarios['user'];
             if($usuario['user'] == $_POST['nom'] && $usuario['passwd'] == $_POST['passwd']){
                 $usuario_validate = TRUE;
                 break;
-            } 
-        } 
+            }
+        }
         if($usuario_validate == true){
             echo "El Usuario ya existe";
         }else{
             echo "Inicio session Correcto";
         }
+        // $_SERVER["REQUEST_METHOD"] == "POST"
     }
 ?>
 
