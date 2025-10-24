@@ -3,6 +3,7 @@ session_start();
 // Iniciamos Session
 ?>
 
+<!-- 24-10-2025 -->
 
 <!DOCTYPE html>
 <html lang="es">
@@ -28,7 +29,7 @@ session_start();
             foreach($_SESSION['personajes'] as $personaje): ?>
             <div class="col-md-4">
                 <div class="card h-100 shadow-sm  border border-md bg-primary">
-                    
+
                 </div>
             </div>
         <?php endforeach; ?>
