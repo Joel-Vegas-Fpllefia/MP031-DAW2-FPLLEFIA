@@ -1,4 +1,70 @@
-<!-- AQUI VA LA LÓGICA PHP  -->
+<?php
+session_start();
+
+if(isset($_SESSION['username'])){
+    if(!$_SESSION['username'] === "admin"){header("Location: home.php");}
+}else{header("Location: login.php");}
+
+
+function user_admin(){
+    $is_admin = false;
+    if(isset($_GET['id'])){$is_admin = true;}
+    return $is_admin;
+}
+
+function edit_book($id){
+
+    echo '
+         <form method="POST" action="modify_books.php?id='.$id.'" class="mx-auto" style="max-width: 600px;">
+             <div class="form-floating mb-3">
+                 <input type="text" class="form-control" id="titulo" name="titulo" value="'.$_SESSION['libros'][$id]['titulo'].'" placeholder="Título" required>
+                 <label for="titulo">Título</label>
+             </div>
+             <div class="form-floating mb-3">
+                 <input type="text" class="form-control" id="autor" name="autor" value="'.$_SESSION['libros'][$id]['autor'].'" placeholder="Autor" required>
+                 <label for="autor">Autor</label>
+             </div>
+             <div class="form-floating mb-3">
+                 <input type="text" class="form-control" id="imagen" name="imagen" value="'.$_SESSION['libros'][$id]['img'].'" placeholder="URL de la Imagen">
+                 <label for="imagen">URL de la Imagen</label>
+             </div>
+             <div class="form-floating mb-4">
+                 <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" style="height: 150px;">'.$_SESSION['libros'][$id]['descripcion'].'</textarea>
+                 <label for="descripcion">Descripción</label>
+             </div>
+             <div class="d-grid">
+             <button type="submit" class="btn btn-primary btn-lg"></button>
+         </div>
+     </form>
+    ';
+}
+
+function add_book(){
+    echo '
+         <form method="POST" action="modify_books.php" class="mx-auto" style="max-width: 600px;">
+             <div class="form-floating mb-3">
+                 <input type="text" class="form-control" id="titulo" name="titulo" value="" placeholder="Título" required>
+                 <label for="titulo">Título</label>
+             </div>
+             <div class="form-floating mb-3">
+                 <input type="text" class="form-control" id="autor" name="autor" value="" placeholder="Autor" required>
+                 <label for="autor">Autor</label>
+             </div>
+             <div class="form-floating mb-3">
+                 <input type="text" class="form-control" id="imagen" name="imagen" value="" placeholder="URL de la Imagen">
+                 <label for="imagen">URL de la Imagen</label>
+             </div>
+             <div class="form-floating mb-4">
+                 <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" style="height: 150px;"></textarea>
+                 <label for="descripcion">Descripción</label>
+             </div>
+             <div class="d-grid">
+             <button type="submit" class="btn btn-primary btn-lg"></button>
+         </div>
+     </form>
+    ';
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,27 +94,10 @@
         </div>
 
         <!-- Formulario para agregar o editar libro. DEPENDIENDO DE SI SE AÑADE O SE EDITA CAMBIARÁN COSA DEL FORMULARIO, USA TERNARIOS SON MUY ÚTILES-->
-        <form method="POST" class="mx-auto" style="max-width: 600px;">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="titulo" name="titulo" value="" placeholder="Título" required>
-                <label for="titulo">Título</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="autor" name="autor" value="" placeholder="Autor" required>
-                <label for="autor">Autor</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="imagen" name="imagen" value="" placeholder="URL de la Imagen">
-                <label for="imagen">URL de la Imagen</label>
-            </div>
-            <div class="form-floating mb-4">
-                <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" style="height: 150px;"><?= $descripcion ?></textarea>
-                <label for="descripcion">Descripción</label>
-            </div>
-            <div class="d-grid">
-                <button type="submit" class="btn btn-primary btn-lg"></button>
-            </div>
-        </form>
+        <?php 
+            if(user_admin()){edit_book($_GET['id']);}
+            else{add_book();}
+        ?>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

@@ -8,10 +8,11 @@ $usuarios = [
 ];
 
 // Procesamiento del formulario.
-    if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['user'])){
+    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user'])){
         // Validación de credenciales.
         foreach($usuarios as $usuario){
-            if($usuario['username'] === $_GET['user'] && $usuario['password'] === $_GET['passwd']){
+            if($usuario['username'] === $_POST['user'] && $usuario['password'] === $_POST['passwd']){
+                load_data_in_Session($usuario['username'],$usuario['role'],$_POST['img']);
                 header('Location: home.php');
             }
         }
@@ -19,6 +20,11 @@ $usuarios = [
         echo 'error';
     }
    
+function load_data_in_Session($username,$role,$photo){
+    $_SESSION['username'] = $username;
+    $_SESSION['role'] = $role;
+    $_SESSION['photo'] = $photo;
+}
   
 
 ?>
@@ -43,7 +49,7 @@ $usuarios = [
         <div class="signin">
             <div class="content text-center">
                 <h2>Inicia sesión</h2>
-                <form method="GET" action="login.php">
+                <form method="POST" action="login.php">
                     <div class="inputBox ">
                         <input class="p-2 m-2" placeholder="Username" type="text" name="user" required>
                     </div>
