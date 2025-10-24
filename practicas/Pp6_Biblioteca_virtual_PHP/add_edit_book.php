@@ -25,7 +25,7 @@ function edit_book($id){
                  <label for="autor">Autor</label>
              </div>
              <div class="form-floating mb-3">
-                 <input type="text" class="form-control" id="imagen" name="imagen" value="'.$_SESSION['libros'][$id]['img'].'" placeholder="URL de la Imagen">
+                 <input type="text" class="form-control" id="img" name="img" value="'.$_SESSION['libros'][$id]['img'].'" placeholder="URL de la Imagen">
                  <label for="imagen">URL de la Imagen</label>
              </div>
              <div class="form-floating mb-4">
