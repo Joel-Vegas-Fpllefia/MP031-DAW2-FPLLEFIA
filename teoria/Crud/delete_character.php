@@ -1,0 +1,1 @@
+<!-- Eliminaremos los Personajes que seleccionaremos -->
