@@ -9,15 +9,15 @@ $usuarios = [
 
 // Procesamiento del formulario.
     if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['user'])){
+        // Validación de credenciales.
         foreach($usuarios as $usuario){
             if($usuario['username'] === $_GET['user'] && $usuario['password'] === $_GET['passwd']){
                 header('Location: home.php');
             }
         }
-
+        // Mensage de error
         echo 'error';
     }
-    // Validación de credenciales.
    
   
 
