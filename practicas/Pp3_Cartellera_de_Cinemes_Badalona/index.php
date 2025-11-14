@@ -8,14 +8,14 @@
 </head>
 <body>
     <?php 
-    include("./components/header.php");
-    include("./src/main.php");
+        include("./components/header.php");
+        include("./src/main.php");
     ?>
     <main>
         <!-- Cards = Conjunto de todas las tarjetas -->
         <div id="Cards">
             <!-- Card = Tarjeta -->
-            <?php load_target(); ?>
+            <?php load_target();?>
         </div>
     </main>
 </body>

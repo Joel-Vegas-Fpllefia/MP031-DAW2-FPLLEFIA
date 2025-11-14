@@ -40,4 +40,5 @@ foreach ($alumnos as $alumno){
     echo "<p> Edad: {$alumno["age"]} </p>";
     echo "<p> Curso: {$alumno["curso"]} </p>";
 }
+
 ?>
